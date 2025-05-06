@@ -1,0 +1,6 @@
+상품 테이블
+create table goods(
+goodsname varchar2(20),
+goodsprice varchar2(8),
+goodscnt varchar2(3),
+goodscomment varchar2(100));

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="www.silver.dao.IF_GoodsDAO">
+	<!-- resultType=반환타입 , parameterType=받는타입  -->
+	<insert id="insertgoods" parameterType="www.silver.VO.GoodsVO">
+		insert into goods values( #{goodsname}, #{goodsprice}, #{goodscnt}, #{goodscomment})
+	</insert>
+
+	<!-- resultType=반환타입 , parameterType=받는타입  -->
+	<select id="selectname" parameterType="String" resultType="www.silver.VO.GoodsVO">
+		select * from goods where goodsname = #{selectname}
+	</select>
+	
+	<delete id="deletename" parameterType="String">
+		delete from goods where goodsname = #{deletename}
+	</delete>
+	
+	<select id="selectall" resultType="www.silver.VO.GoodsVO">
+		select * from goods
+	</select>
+	
+	<update id="updatelist" parameterType="www.silver.VO.GoodsUpdateVO">
+		update goods set goodsname=#{goodsname}, goodsprice=#{goodsprice}, goodscnt=#{goodscnt}, goodscomment=#{goodscomment} where goodsname = #{name}
+	</update>
+</mapper>
